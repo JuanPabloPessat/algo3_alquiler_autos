@@ -11,8 +11,8 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void registrarAlquiler(Vehiculo vehiculo, int dias) {
-        alquileres.add(new Alquiler(vehiculo,dias));
+    public void registrarAlquiler(Alquilable alquilable, int dias) {
+        alquileres.add(new Alquiler(alquilable,dias));
     }
 
     public Double calcularPrecioAlquileres() {
