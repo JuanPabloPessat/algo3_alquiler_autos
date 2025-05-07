@@ -7,6 +7,14 @@ public abstract class Inmueble implements Alquilable {
         this.direccion = direccion;
     }
 
+    public boolean esInmueble() {
+        return true;
+    }
+
+    public boolean esVehiculo() {
+        return false;
+    }
+
     public abstract Double alquilarPorDias(int dias);
 
     private boolean tieneMismaDireccion(int direccion){
@@ -14,7 +22,7 @@ public abstract class Inmueble implements Alquilable {
     }
 
     public boolean esIgualA(Alquilable unAlquilable){
-        if (!(unAlquilable instanceof Inmueble)){ return false; }
+        if (!(unAlquilable.esInmueble())){ return false; }
         Inmueble unInmueble = (Inmueble) unAlquilable;
         return unInmueble.tieneMismaDireccion(this.direccion);
     }

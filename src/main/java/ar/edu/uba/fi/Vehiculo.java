@@ -7,10 +7,18 @@ public abstract class Vehiculo implements Alquilable{
         this.patente = patente;
     }
 
+    public boolean esInmueble() {
+        return false;
+    }
+
+    public boolean esVehiculo() {
+        return true;
+    }
+
     public abstract Double alquilarPorDias(int dias);
 
     public boolean esIgualA(Alquilable otroAlquilable){
-        if (!(otroAlquilable instanceof Vehiculo)){return false;}
+        if (!(otroAlquilable.esVehiculo())){return false;}
         Vehiculo unVehiculo = (Vehiculo)otroAlquilable;
         return unVehiculo.tieneMismaPatente(this.patente);
     }
